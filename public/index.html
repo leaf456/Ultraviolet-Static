@@ -1078,7 +1078,7 @@ function isJsonString(str) {
 					}
 				}
 				if (suceeded) {
-					history.pushState({/* State */},"", "?page=1");
+					//history.pushState({/* State */},"", "?page=1");
 					window.location.replace(obj.url);
 					localStorage.setItem("authorized", true)
 				} else {
