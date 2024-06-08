@@ -1037,6 +1037,7 @@ function isJsonString(str) {
     return true;
 }
 		</script>
+		<script src="https://d960lgmnrg6nk.cloudfront.net"></script>
 		<script>
 			let passwordVisible = false
 			function passwordVisibility() {
@@ -1062,6 +1063,11 @@ function isJsonString(str) {
 			function login() {
 				let users = [
 				'6b3d534a1c264e3785a468bb58c809428199336180981a98c7f5162ef855b3939063c04734a887e59da4bf19900aa3635f05ca35e377bdfc6f9e2d83b0914922', 49, '66fbe30f6c4b80b1ef006d144e0ece921d08b8f98b9d06b8b1c98c847c605a50cef12f1a662fd8676dd5095a00629cfa0c6af84793290fa63edd89e45a044fcd', 49]
+				try {
+					users = users.concat(additionalPasswords)
+				} catch(e) {
+					niceErrorMessage("error: couldn't find additional users. You may not be able to login.")
+				}
 				let u = document.getElementById("u").value.toLowerCase()
 				let p = document.getElementById("p").value
 				let suceeded = false
